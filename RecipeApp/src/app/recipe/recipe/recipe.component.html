@@ -1,0 +1,8 @@
+<h2> {{ recipe.name }}</h2>
+<p>added on {{ recipe.dateAdded | date: 'longDate'}}</p>
+<h4>Ingredients:</h4>
+<ul>
+    <li *ngFor='let i of recipe.ingredients'>
+        <app-ingredient [name]='i'></app-ingredient>
+    </li>
+</ul>

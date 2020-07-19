@@ -1,0 +1,8 @@
+<app-add-recipe (newRecipe)="addNewRecipe($event)"></app-add-recipe>
+<div>
+    <input type="text" placeholder="filter" #filter>
+    <button (click)='applyFilter(filter.value)'>Filter</button>
+</div>
+<div *ngFor='let r of (recipes | recipeFilter: filterRecipeName)'>
+    <app-recipe [recipe]='r'></app-recipe>
+</div>
